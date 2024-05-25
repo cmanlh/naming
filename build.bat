@@ -1,0 +1,1 @@
+gcc .\src\main.c .\libs\libutf8.a -o .\output\naming.exe
