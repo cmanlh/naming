@@ -1,1 +1,1 @@
-gcc .\src\main.c .\libs\libutf8.a -o .\output\naming.exe
+gcc .\src\main.c .\libs\libutf8.a .\libs\libraylib.a -lgdi32 -lwinmm -o .\output\naming.exe

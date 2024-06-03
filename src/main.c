@@ -1,7 +1,5 @@
 #include "../include/utf8.h"
 #include <stdio.h>
-#include <assert.h>
-#include <stdlib.h>
 
 uint32_t codePoints[] = {20154, 38388, 22235, 26376, 22825, 44, 97, 98, 99, 100, 101, 46, 38543, 39118, 28508, 20837, 22812, 65292, 105, 122, 110, 107, 121, 12290, 0x1F600, 0x0644};
 char _char[] = "人间四月天,abcde.随风潜入夜，iznky。😀ل";
@@ -20,7 +18,7 @@ void test_utf8CodePoint()
         }
         if (-1 == utf8CodePoint(&_char[charIdx], &info))
         {
-            assert(0 == -1);
+            exit(1);
         }
         if (info.codePoint != codePoints[pointIdx])
         {
