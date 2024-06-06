@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define UTF8_CHINESE_SIZE 22000
+#define UTF8_CHINESE_SIZE 40900
 
 static void _setup_mapping(uint32_t index[], uint32_t mapping[], char *path)
 {
@@ -149,7 +149,7 @@ int main(int argc, char const *argv[])
     uint32_t mapping[UTF8_CHINESE_SIZE] = {0};
 
     _setup_mapping(index, mapping, "C:\\codespace\\naming\\ts.txt");
-    _parse_mapping_fix(index, mapping, "C:\\Users\\luhong\\Downloads\\ts.txt", TRUE);
+    _parse_mapping_fix(index, mapping, "C:\\Users\\luhong\\Downloads\\TSCharacters.txt", TRUE);
     _save_to_file(index, mapping, "C:\\codespace\\naming\\ts_new.txt");
     return 0;
 }

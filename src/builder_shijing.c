@@ -16,7 +16,7 @@ static void _build_dic(uint32_t ts_mapping[], uint32_t dic[], const char *words)
         }
         charIdx += info.size;
 
-        if (info.codePoint < UTF8_CHINESE_CODE_POINT_MIN)
+        if (is_skipable_word(info.codePoint) == TRUE)
         {
             continue;
         }

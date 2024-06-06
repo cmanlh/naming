@@ -2,9 +2,29 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define UTF8_CHINESE_SIZE 22000
+#define UTF8_CHINESE_SIZE 40900
 #define UTF8_CHINESE_CODE_POINT_MIN 0X4E00
 #define UTF8_CHINESE_CODE_POINT_MAX 0X9FA5
+#define TRUE 1
+#define FALSE 0
+
+uint8_t is_skipable_word(uint32_t code_point)
+{
+    if (code_point < UTF8_CHINESE_CODE_POINT_MIN // 非中文字符
+        || code_point == 65281                   // ！
+        || code_point == 65292                   // ，
+        || code_point == 65306                   // ：
+        || code_point == 65307                   // ；
+        || code_point == 65311                   // ？
+    )
+    {
+        return TRUE;
+    }
+    else
+    {
+        return FALSE;
+    }
+}
 
 void save_to_file(uint32_t dic[], char *path)
 {
